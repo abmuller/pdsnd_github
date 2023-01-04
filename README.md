@@ -24,5 +24,11 @@ This project receives user input from terminal commands, then curates the follow
     * washington.csv
 
 
+### Python Libraries Utilized
+*NumPy & pandas are open sourced libraries that are the industry standard for working with data in Python. They are both utilized within the bikeshare.py code to enhance the statistical output capabilities of the program. See below to learn more:*
+1. **NumPy** - see [this link](https://numpy.org/doc/stable/) for NumPy User Documentation
+2. **pandas** - see [this link](https://pandas.pydata.org/docs/) for pandas User Documentation
+
+
 ### *Credits*
 *Aside from our wonderful Udacity educators of course...* I must thank [This Wordpress Site](https://wordpress.com/support/markdown-quick-reference/) for teaching me how to do all this cool stuff with Markdown.
