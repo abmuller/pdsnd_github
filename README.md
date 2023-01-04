@@ -18,8 +18,11 @@ This project receives user input from terminal commands, then curates the follow
 ### Files Used
 1. **bikeshare.py** - the python code file
 
-2. *Three CSV files* each containing individual bike rental data for: New York, Washington, & Chicago.
+2. **Three CSV files** each containing individual bike rental data for: New York, Washington, & Chicago.
+    * chicago.csv
+    * new_york_city.csv
+    * washington.csv
 
 
-### Credits
+### *Credits*
 *Aside from our wonderful Udacity educators of course...* I must thank [This Wordpress Site](https://wordpress.com/support/markdown-quick-reference/) for teaching me how to do all this cool stuff with Markdown.
