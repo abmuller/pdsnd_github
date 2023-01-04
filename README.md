@@ -15,6 +15,7 @@ This project receives user input from terminal commands, then curates the follow
 
     #4 User Info (i.e. # of users per user type/gender)
 
+
 ### Files Used
 1. **bikeshare.py** - the python code file
 
@@ -22,6 +23,11 @@ This project receives user input from terminal commands, then curates the follow
     * chicago.csv
     * new_york_city.csv
     * washington.csv
+
+## Required Software List
+- You should have Python 3, NumPy, and pandas installed using Anaconda
+- A text editor, like Sublime or Atom.
+- A terminal application (Terminal on Mac and Linux or Cygwin on Windows)
 
 
 ### Python Libraries Utilized
