@@ -41,8 +41,6 @@ def get_filters():
         else:
             print("\nOops! That is not a valid month in our dataset, restarting selection process.")
 
-
-
     # Fetches user input for day of week (all, monday, tuesday, ... sunday)
     day = ''
     days = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday','all']
@@ -100,7 +98,12 @@ def load_data(city, month, day):
 
 
 def time_stats(df):
-    """Displays statistics on the most frequent times of travel."""
+    """
+    Displays statistics on the most frequent times of travel.
+
+    Args:
+        df - Pandas DataFrame containing city data filtered by month and day
+    """
 
     print('-'*80)
     print('\nCalculating The Most Frequent Times of Travel...')
@@ -141,7 +144,11 @@ def time_stats(df):
 
 
 def station_stats(df):
-    """Displays statistics on the most popular stations and trip."""
+    """
+    Displays statistics on the most popular stations and trip.
+    Args:
+        df - Pandas DataFrame containing city data filtered by month and day
+    """
 
     print('-'*80)
     print('\nCalculating The Most Popular Stations and Trip...\n')
@@ -171,8 +178,13 @@ def station_stats(df):
 
 
 def trip_duration_stats(df):
-    """Displays statistics on the total and average trip duration."""
-    """ Trip Duration Column From file is in Seconds so need to convert to minutes/seconds format & hours/minutes format using divmod"""
+    """
+    Displays statistics on the total and average trip duration.
+    Trip Duration column from data source is in Seconds format; need to convert to minutes/seconds format & hours/minutes format using divmod
+
+    Args:
+        df - Pandas DataFrame containing city data filtered by month and day
+    """
 
     print('-'*80)
     print('\nCalculating Trip Duration...\n')
@@ -181,19 +193,20 @@ def trip_duration_stats(df):
 
     print('\n~~~~~Bike Share Trip Duration Statistics~~~~~\n')
 
-    # TO DO: display total travel time
+    # Calculates the total trip duration
     total_trip_duration = df['Trip Duration'].sum()
     minute, second = divmod(total_trip_duration, 60)
     hour, minute = divmod(minute, 60)
 
     print(f"Total Sum of all Trips: {hour} hours, {minute} minutes and {second} seconds.")
 
-    # TO DO: display mean travel time
+    # Calculates average travel time
     average_trip_duration = round(df['Trip Duration'].mean())
-    #Finds the average duration in minutes and seconds format
+    #Calculates the average duration in minutes & seconds format
     minutes, seconds = divmod(average_trip_duration, 60)
 
     if minutes > 60:
+        # Calculates the average duration in hours & minutes format if applicable
         hours, minutes = divmod(minutes, 60)
         print(f"\nThe Average trip duration is: {hours} hours, {minutes} minutes and {seconds} seconds.")
     else:
@@ -206,7 +219,12 @@ def trip_duration_stats(df):
 
 
 def user_stats(df):
-    """Displays statistics on bikeshare users."""
+    """
+    Displays statistics on bikeshare users.
+
+    Args:
+        df - Pandas DataFrame containing city data filtered by month and day
+    """
 
     print('-'*80)
     print('\nCalculating User Stats...\n')
@@ -222,7 +240,7 @@ def user_stats(df):
     print('-'*35)
 
     # Display counts of each gender for each user type
-    # Uses the try clause since not every df has a gender column
+    # Try-clause handles potential absense of gender data
     try:
         print('\nCount of User Types by Gender:\n')
         print('-'*35)
@@ -233,12 +251,9 @@ def user_stats(df):
 
     # Display earliest, most recent, and most common year of birth
     try:
-        earliest_birth = int(df['Birth Year'].min())
-        recent_birth = int(df['Birth Year'].max())
-        common_birth_year = int(df['Birth Year'].mode()[0])
-        print("\nEarliest Birth Year: ",earliest_birth)
-        print("\nMost Recent Birth Year: ",recent_birth)
-        print("\nMost Common Birth Year: ",common_birth_year)
+        print("\nEarliest Birth Year: ",int(df['Birth Year'].min()))
+        print("\nMost Recent Birth Year: ",int(df['Birth Year'].max()))
+        print("\nMost Common Birth Year: ",int(df['Birth Year'].mode()[0]))
     except:
         print("\n Oooops! My apologies, we do not have any birth year details for your selected city.")
 
@@ -257,12 +272,12 @@ def display_raw_data(df):
     print("\n Now Entering Raw Data Viewer...")
     print('-'*80)
 
-    #created list to store possible response values
+    # Create list to store possible response values
     response_lst = ['yes','no']
     response =''
     counter = 0
 
-    #initial while loop to get user input and ensure it matches correct response syntax
+    # Initial while loop to get user input and ensure it matches correct response syntax
     while response not in response_lst:
         print("\n If you want to view the first five lines of raw data enter yes, if not type no.")
         response = input().lower()
@@ -272,7 +287,7 @@ def display_raw_data(df):
         elif response not in response_lst:
             print("\n Oooops! Your input is something other than \'yes\' or \'no\'... please retry!!")
 
-    #this while loop repeats the input request until the user answers something other than yes
+    # While loop repeats the input request until the user answers something other than yes
     while response == "yes":
         print("\nDo you want to see five more lines of data?")
         print("\nIf you do... type yes. If you do not... type no.")
