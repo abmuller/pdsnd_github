@@ -222,7 +222,7 @@ def trip_duration_stats(df):
 def user_stats(df):
     """
     Displays statistics on bikeshare users.
-    
+
     Args:
         df - Pandas DataFrame containing city data filtered by month and day
     """
@@ -252,12 +252,9 @@ def user_stats(df):
 
     # Display earliest, most recent, and most common year of birth
     try:
-        earliest_birth = int(df['Birth Year'].min())
-        recent_birth = int(df['Birth Year'].max())
-        common_birth_year = int(df['Birth Year'].mode()[0])
-        print("\nEarliest Birth Year: ",earliest_birth)
-        print("\nMost Recent Birth Year: ",recent_birth)
-        print("\nMost Common Birth Year: ",common_birth_year)
+        print("\nEarliest Birth Year: ",int(df['Birth Year'].min()))
+        print("\nMost Recent Birth Year: ",int(df['Birth Year'].max()))
+        print("\nMost Common Birth Year: ",int(df['Birth Year'].mode()[0]))
     except:
         print("\n Oooops! My apologies, we do not have any birth year details for your selected city.")
 
