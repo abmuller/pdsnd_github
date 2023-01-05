@@ -100,7 +100,12 @@ def load_data(city, month, day):
 
 
 def time_stats(df):
-    """Displays statistics on the most frequent times of travel."""
+    """
+    Displays statistics on the most frequent times of travel.
+
+    Args:
+        df - Pandas DataFrame containing city data filtered by month and day
+    """
 
     print('-'*80)
     print('\nCalculating The Most Frequent Times of Travel...')
@@ -141,7 +146,11 @@ def time_stats(df):
 
 
 def station_stats(df):
-    """Displays statistics on the most popular stations and trip."""
+    """
+    Displays statistics on the most popular stations and trip.
+    Args:
+        df - Pandas DataFrame containing city data filtered by month and day
+    """
 
     print('-'*80)
     print('\nCalculating The Most Popular Stations and Trip...\n')
@@ -171,8 +180,13 @@ def station_stats(df):
 
 
 def trip_duration_stats(df):
-    """Displays statistics on the total and average trip duration."""
-    """ Trip Duration Column From file is in Seconds so need to convert to minutes/seconds format & hours/minutes format using divmod"""
+    """
+    Displays statistics on the total and average trip duration.
+    Trip Duration Column From file is in Seconds so need to convert to minutes/seconds format & hours/minutes format using divmod
+
+    Args:
+        df - Pandas DataFrame containing city data filtered by month and day
+    """
 
     print('-'*80)
     print('\nCalculating Trip Duration...\n')
@@ -206,7 +220,12 @@ def trip_duration_stats(df):
 
 
 def user_stats(df):
-    """Displays statistics on bikeshare users."""
+    """
+    Displays statistics on bikeshare users.
+    
+    Args:
+        df - Pandas DataFrame containing city data filtered by month and day
+    """
 
     print('-'*80)
     print('\nCalculating User Stats...\n')
